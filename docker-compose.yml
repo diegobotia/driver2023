@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mysql-standalone:
+    image: mysql:5.7
+    container_name: mysql-standalone
+    environment:
+      MYSQL_ROOT_PASSWORD: sa
+      MYSQL_DATABASE: driver2024
+      MYSQL_USER: sa
+      MYSQL_PASSWORD: sa
+
+  driver2023:
+    image: driver2023
+    container_name: driver2023
+    ports:
+      - "8089:8089"
+    links:
+      - mysql-standalone:mysql
