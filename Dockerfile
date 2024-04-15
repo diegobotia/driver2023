@@ -1,6 +1,6 @@
 FROM adoptopenjdk/openjdk11
 # Descargar la imagen de MySQL durante el proceso de construcción
-RUN docker pull mysql:5.7
+FROM mysql:5.7
 COPY driver2023-0.0.1-SNAPSHOT.jar /usr/src/bootdocker/driver2023-0.0.1-SNAPSHOT.jar
 WORKDIR /usr/src/bootdocker
 EXPOSE 8089
